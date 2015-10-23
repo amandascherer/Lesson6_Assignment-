@@ -1,6 +1,6 @@
 /*  Program Name:  Photo Gallery Application
-    Author: 
-    Date:   
+    Author: Amanda Scherer
+    Date:   10/23/15
     Filename: zoom.js
  */
 
@@ -12,6 +12,23 @@ var figFilename = "images/IMG_0" + photoOrderArray[2] + ".jpg";
 
 /* populate img element and create event listener */
 function pageSetup() {
+  document.getElementsByTagName("img")[0]. src=figFilename; //
+  createEventListener(); 
+}
+  /*close window*/
+  function closeWin(){
+    window.close(); 
+  }
+  
+  /*create event listener for close button*/ 
+  function createEventListener(){
+    var closeWindowDiv= document.getElementsByTagName("p")[0];
+    if (closeWindowDiv.addEventListener){
+      closeWindowDiv.addEventListener("click", closeWin, false);
+    } else if (closeWindowDiv.attachEvent){
+      closeWindowDiv.attachEvent("onclick", closeWin);
+    }
+
    document.getElementsByTagName("img")[0].src = figFilename; // assign filename to img element
 }
 
